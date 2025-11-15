@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://muy3pwb2wy4b"]
+
+[ext_resource type="Script" uid="uid://bsnvemapa583e" path="res://Scripts/Cena1/cutscene.gd" id="1_opjpl"]
+[ext_resource type="VideoStream" uid="uid://df1mqvpholggf" path="res://cutscene/Looks_like_that_maniac_from_Color_Island_locked_me_in_his_room..._1.ogv" id="2_opjpl"]
+
+[node name="Cutscene" type="Node2D"]
+script = ExtResource("1_opjpl")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control"]
+layout_mode = 0
+offset_right = 1930.0
+offset_bottom = 1080.0
+stream = ExtResource("2_opjpl")
+autoplay = true
+expand = true
+
+[connection signal="finished" from="Control/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmdm4na6xoi52"]
+
+[ext_resource type="Script" uid="uid://kl3mlbnhu1" path="res://Scripts/Cena1/credits.gd" id="1_4bpfe"]
+[ext_resource type="Texture2D" uid="uid://drxpxn5bkj2au" path="res://Assets/Idk/close_buton.png" id="2_wbl41"]
+[ext_resource type="Texture2D" uid="uid://c3vdktdaxa7s6" path="res://Assets/Cena1/YOU_ESCAPED.png" id="3_wfpdk"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4bpfe")
+
+[node name="Button" type="Button" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 1727.0
+offset_top = 902.0
+offset_right = 2407.0
+offset_bottom = 1582.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 75
+icon = ExtResource("2_wbl41")
+flat = true
+
+[node name="Button2" type="Button" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 1730.0
+offset_top = 36.0001
+offset_right = 2410.0
+offset_bottom = 716.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 75
+icon = ExtResource("2_wbl41")
+flat = true
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(958, 542)
+scale = Vector2(1.8219, 1.80667)
+texture = ExtResource("3_wfpdk")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_pressed"]
